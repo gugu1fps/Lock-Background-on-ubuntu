@@ -1,0 +1,12 @@
+# 1. Crie o arquivo de perfil do dconf
+echo -e "user-db:user\nsystem-db:local" | sudo tee /etc/dconf/profile/user > /dev/null
+
+# 2. Crie diretório e arquivo de bloqueio de chaves
+sudo mkdir -p /etc/dconf/db/local.d/locks/
+echo -e "/org/gnome/desktop/background/picture-uri\n/org/gnome/desktop/background/picture-uri-dark" | sudo tee /etc/dconf/db/local.d/locks/00_wallpaper > /dev/null
+
+# 3. Atualize o banco de dados do dconf
+sudo dconf update
+
+# 4. Reinicie o sistema
+sudo reboot

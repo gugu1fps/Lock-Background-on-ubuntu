@@ -1,3 +1,4 @@
+# COPIE TODO CONTEUDO E COLE NO TERMINAL
 # 1. Crie o arquivo de perfil do dconf
 echo -e "user-db:user\nsystem-db:local" | sudo tee /etc/dconf/profile/user > /dev/null
 
@@ -9,4 +10,5 @@ echo -e "/org/gnome/desktop/background/picture-uri\n/org/gnome/desktop/backgroun
 sudo dconf update
 
 # 4. Reinicie o sistema
+
 sudo reboot
